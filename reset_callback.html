@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reset Password</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f3f3f3;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Password Reset</h1>
+  <p>Click the button below to open the app and reset your password.</p>
+  <button onclick="redirectToApp()">Reset Password</button>
+
+  <script>
+    function redirectToApp() {
+      const fragment = window.location.hash; // ex: #access_token=xxxx
+      const appUrl = `myapp://reset-callback${fragment}`;
+      window.location.href = appUrl;
+    }
+  </script>
+</body>
+</html>
